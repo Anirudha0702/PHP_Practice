@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Academics</title>
+</head> 
+<style>
+    :root{
+    --primary-color-dark:#21519E;
+    --primary-color-dark_alpha:#4d89eb;
+    --acent-color-light:#fff;
+    --acent-color-dark:#000;
+    --acent-color-dark_alpha:#000000ab;
+}
+    *,*::after,*::before{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+     li,a{
+        list-style-type: none;
+        color:var(--acent-color-light);
+        text-decoration: none;
+     }
+     .vartical-nav{
+        max-width:20rem;
+        width:30%;
+        height: 100svh;
+        background-color: var(--primary-color-dark);
+        position: relative;
+        position: fixed;
+        z-index: 11;
+     }
+     .dept{
+       padding-bottom: 0.5rem;
+       cursor: pointer;
+     }
+     .dept .dept-name{
+        width:100%;
+        height:2.5rem;
+        display: block;
+        padding: 1rem 1rem;
+        font-weight: bold;
+        color:var(--acent-color-light);
+        border-bottom: 1px solid var(--acent-color-dark);
+     }.dept:hover .dept-name{
+        background-color:var(--primary-color-dark_alpha);
+     }
+     .dept .courses{
+        display: none;
+        padding: 0.5rem;
+        font-weight: bold;
+        border-bottom: 1px solid var(--acent-color-light);
+        color:var(--acent-color-light);
+     }
+     .dept .courses .course {
+        width:100%;
+        margin: 0.5rem 0;
+        padding: 0 0.7rem;
+        color:var(--acent-color-light);
+     }
+     .dept:hover .courses{
+        display: block;
+     }
+     .hero-section{
+    position: relative;
+    width:100svw;
+    height:100svh;
+    background-image: url("./Assets/cover.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color:var(--acent-color-light);
+}
+.hero-section::after{
+    content: "";
+    position: absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    background: #000000a9;
+}
+.hero-section .heading,.hero-section .button-wrapper{
+    z-index: 10;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 1px 3px #000;
+    margin:0.5rem 0
+}
+.hero-section .heading .intro{
+    font-size: 0.8rem;
+    color:#f1e9e9d0;
+}
+.hero-section .button-wrapper .btn{
+    width:8rem;
+    height:2.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: transparent;
+    color:var(--acent-color-light);
+    font-weight: 500;
+    border: 2px solid var(--acent-color-light);
+    transition: 0.3s ease-in-out;
+}
+.hero-section .button-wrapper .btn:hover{
+    color:var(--acent-color-dark);
+    background-color: var(--acent-color-light);
+}
+</style>
+<body>
+    <div class="wrapper">
+        <div class="vartical-nav">
+            <ul class="depts">
+                <li class="dept">
+                    <p class="dept-name">Science</p>
+                    <ul class="courses">
+                        <li class="course"><a href="./course.php?index=0">Math</a></li>
+                        <li class="course"><a href="./course.php?index=1">Physics</a></li>
+                        <li class="course"><a href="./course.php?index=2">Computer Science</a></li>
+                        <li class="course"><a href="./course.php?index=3">Chemistry</a></li>
+                    </ul>
+                </li>
+                <li class="dept">
+                    <p class="dept-name">Arts</p>
+                    <ul class="courses">
+                        <li class="course"><a href="./course.php?index=4">Geography</a></li>
+                        <li class="course"><a href="./course.php?index=5">Bengali</a></li>
+                        <li class="course"><a href="./course.php?index=6">History</a></li>
+                        <li class="course"><a href="./course.php?index=7">English</a></li>
+                    </ul>
+                </li>
+                <li class="dept">
+                    <p class="dept-name">Commerce</p>
+                    <ul class="courses">
+                        <li class="course"><a href="./course.php?index=8">Finance</a></li>
+                        <li class="course"><a href="./course.php?index=9">Economics</a></li>
+                        <li class="course"><a href="./course.php?index=10">Accountancy</a></li>
+                        <li class="course"><a href="./course.php?index=11">E-comerce</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="hero-section">
+            <div class="heading">
+             <span>WELCOME TO </span>
+             <h2>NEW ALIPORE COLLEGE</h2>
+             <span class="intro">Where passion meets opportunities</span>
+            </div>
+            <div class="button-wrapper">
+             <button class="gallery-btn btn" onClick="document.location.href='./gallery.html'">Gallery</button>
+             <button class="admission-btn btn"onClick="document.location.href='./admission.html'">Admission</button>
+            </div>
+         </div>
+    </div>
+</body>
+</html>
