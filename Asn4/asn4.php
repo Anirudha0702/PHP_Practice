@@ -16,3 +16,4 @@ for($x=0;$x<$length-1;$x++){
     echo("$color_code[$x]\n");
     echo("$color_name[$x]\n")   ;
 }
+?>
