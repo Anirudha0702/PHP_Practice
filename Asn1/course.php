@@ -7,60 +7,85 @@
     <title>Course Info</title>
 </head>
 <style>
+    @import "./homeStyle.css";
     *,*::after,*::before{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
+        margin:0;padding:0;box-sizing:border-box;
+        color:var(--acent-color-dark_alpha);
     }
     h3,ul{
         margin:0.5rem;
     }
+    .addmission span{
+        color:var(--acent-color-light);
+    }
     .cover-section{
-        width:100svw;
-        height:50svh;
-        position: relative;
+        width:100svw;height:50svh;position: relative;
     }
     .cover-section img{
-        position: absolute;
-        width:100%;
-        height:100%;
+        position: absolute;width:100%;height:100%;
+    }
+    .wrapper{
+        position: relative;width:100svw;font-size:1.1rem;display: flex;flex-wrap:wrap;justify-content: space-around;
+        margin:2rem 0;
+    }
+    .wrapper h2{
+        color:var(--primary-color-dark);
+        font-weight: 400;
     }
     .info-wrapper{
-        position: relative;
-        width:100svw;
-        padding:1rem 1rem;
-        font-size:1.1rem;
+        width: 60%;
     }
-    .info-wrapper h1{
-        text-shadow:0 1px 5px #fff;
-        width:70%;
-        padding-bottom:0.5rem;
-        border-bottom:1px solid #000;
+    .addmission{
+        width:25rem;
+        padding: 0.5rem;
+        height: fit-content;
+        background: var(--primary-color-dark);
     }
+    @media (width<900px){
+        .wrapper .flex_item{
+            width:100svw;
+            margin: 0.5rem;
+            padding: 0.5rem;
+        }
+}
 </style>
 <body>
     <?php
-        include 'dataRouting.php';
+        include 'json_data.php';
         $json=json_decode($info,true);
 
     ?>
-    <div class="cover-section" >
-    <img src=<?php echo $json[$_GET["index"]]["img"]; ?> alt="" loading="eager">
+    <div class="cover-section" style="background:url('<?php echo $json[$_GET["index"]]["img"]; ?>');background-position: center;
+        background-size: cover;"></div>
+    <div class="wrapper">
+        <div class="info-wrapper flex_item">
+            <h2><?php echo $json[$_GET["index"]]["name"]; ?>
+            </h2>
+            <span><?php echo $json[$_GET["index"]]["description"]; ?></span>
+            <h3>Our faculty</h3>
+            <ul>
+                <?php
+                    for($x=0;$x<3;$x++){
+                        echo "<li>".$json[$_GET["index"]]["teachers"][$x]."</li>";
+                    }
+                ?>
+            </ul>
+        </div>
+        <div class="addmission flex_item">
+        <span><b>Course Eligibility</b>
+            If the candidate has not studied <?php echo $json[$_GET["index"]]["name"]; ?> in class XII, he / she needs to achieve the <b>50%</b> marks in relevent subjects to apply for <?php echo $json[$_GET["index"]]["name"]; ?> (H).
+            Candidate passed in Business Mathematics is not eligible for Admission.
+            Please also read General Eligibility Criteria, Under Admissions.
+            <b>Course Duration</b>
+            3 Years
+            <b>Course Hours</b>
+            10:15 am to 4:30 pm (Day Session, Co-Ed)
+            <b>Course Fees</b>
+            ₹ 35,540/- (First Semester)
 
+</span>
+        </div>
+        
     </div>
-    <div class="info-wrapper">
-        <h1>Department of 
-            <?php echo $json[$_GET["index"]]["name"]; ?>
-        </h1>
-        <span><?php echo $json[$_GET["index"]]["description"]; ?></span>
-    </div>
-    <h3>Our faculty</h3>
-    <ul>
-        <?php
-            for($x=0;$x<3;$x++){
-                echo "<li>".$json[$_GET["index"]]["teachers"][$x]."</li>";
-            }
-        ?>
-    </ul>
 </body>
 </html>
