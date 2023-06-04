@@ -1,25 +1,26 @@
 <?php
-    $countryName=array();
+    $country_Capital=[];
     $capital=array();
-    $length=10;
+    $length=2;
+    $len_Of_Each_Elmnt=2;
     for($x=0;$x<$length;$x++){
-        $countryName[$x]=readline("Enter country name:  ");
-        $capital[$x]=readline("Enter $countryName[$x] 's capital:  ");
+        $country_Capital[$x][0]=readline("Enter country name:  ");
+        $cntry_name=$country_Capital[$x][0];
+        $country_Capital[$x][1]=readline("Enter $cntry_name 's capital:  ");
     }
     for($x=0;$x<$length-1;$x++){
         for($y=0;$y<$length-1-$x;$y++){
-            if(strcmp($capital[$y+1],$capital[$y])<= 0){
-                $tempCap=$capital[$y+1];
-                $tempCntry=$countryName[$y+1];
-                $capital[$y+1]=$capital[$y];
-                $countryName[$y+1]=$countryName[$y];
-                $capital[$y]=$tempCap;
-                $countryName[$y]=$tempCntry;
+            if(strcmp($country_Capital[$y+1][1],$country_Capital[$y][1])<= 0){
+                $temp_country_Capital=$country_Capital[$y+1];
+                $country_Capital[$y+1]=$country_Capital[$y];
+                $country_Capital[$y]=$temp_country_Capital;
             }
         }
     }
     echo("Country       Capital\n");
     for($x=0;$x<$length;$x++){
-        echo("$countryName[$x]       $capital[$x]\n");
+        $country=$country_Capital[$x][0];
+        $capital=$country_Capital[$x][1];
+        echo("$country     $capital\n");
     }
-?>
+?> 
