@@ -1,19 +1,20 @@
 <?php
-    $color_code=array();
-    $color_name=array();
-    $length=4;
-    for($x=0;$x<$length;$x++){
-        $color_code[$x]=readline("Enter colorCode:  ");
-        $color_name[$x]=readline("Enter $color_code[$x] 's color_name:  ");
-    }
-
-// get First element
-echo "colorcode of $color_name[0] $color_code[0]\n";
-// Delete the last iteam
-unset($color_code[3]);
-unset($color_name[3]);
-for($x=0;$x<$length-1;$x++){
-    echo("$color_code[$x]\n");
-    echo("$color_name[$x]\n")   ;
-}
+$new_Item=[4,'pearl'];
+$insrt_Pos=2;
+$data = [
+    [5, 'yellow'],
+    [14, 'blue'],
+    [3, 'green'],
+    [22, 'white']
+];
+// $dlt_Pos=count($data)-1;
+$dlt_Pos=4;
+echo "Generating first element of ";
+print_r($data[0]);
+array_splice($data,$insrt_Pos,0,[$new_Item]);
+echo "After inserting at $insrt_Pos";
+print_r($data);
+echo "After deleting $dlt_Pos element";
+unset($data[$dlt_Pos]);
+print_r($data);
 ?>
