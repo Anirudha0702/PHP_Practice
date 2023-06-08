@@ -41,6 +41,11 @@
         height: fit-content;
         background: var(--primary-color-dark);
     }
+    footer ,p{
+    background-color: #333;
+    padding: 10px;
+    color:#fff;
+}
     @media (width<900px){
         .wrapper .flex_item{
             width:100svw;
@@ -87,5 +92,12 @@
         </div>
         
     </div>
+      <footer>
+    <div class="contact-info">
+      <p>Address: 123 College Street, City, Country</p>
+      <p>Phone: +1 123-456-7890</p>
+      <p>Email: info@example.com</p>
+    </div>
+  </footer>
 </body>
 </html>

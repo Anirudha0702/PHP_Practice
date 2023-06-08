@@ -7,9 +7,8 @@ $data = [
     [3, 'green'],
     [22, 'white']
 ];
-// $dlt_Pos=count($data)-1;
 $dlt_Pos=4;
-echo "Generating first element of ";
+echo "Generating first element ";
 print_r($data[0]);
 array_splice($data,$insrt_Pos,0,[$new_Item]);
 echo "After inserting at $insrt_Pos";
