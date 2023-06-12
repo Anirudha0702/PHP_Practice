@@ -9,8 +9,7 @@
 <style>
     @import "./homeStyle.css";
     *,*::after,*::before{
-        margin:0;padding:0;box-sizing:border-box;
-        color:var(--acent-color-dark_alpha);
+        margin:0;padding:0;box-sizing:border-box;color:var(--acent-color-dark_alpha);
     }
     h3,ul{
         margin:0.5rem;
@@ -25,32 +24,23 @@
         position: absolute;width:100%;height:100%;
     }
     .wrapper{
-        position: relative;width:100svw;font-size:1.1rem;display: flex;flex-wrap:wrap;justify-content: space-around;
-        margin:2rem 0;
+        position: relative;width:100svw;font-size:1.1rem;display: flex;flex-wrap:wrap;justify-content: space-around;margin:2rem 0;
     }
     .wrapper h2{
-        color:var(--primary-color-dark);
-        font-weight: 400;
+        color:var(--primary-color-dark);font-weight: 400;
     }
     .info-wrapper{
         width: 60%;
     }
     .addmission{
-        width:25rem;
-        padding: 0.5rem;
-        height: fit-content;
-        background: var(--primary-color-dark);
+        width:25rem;padding: 0.5rem;height: fit-content;background: var(--primary-color-dark);
     }
     footer ,p{
-    background-color: #333;
-    padding: 10px;
-    color:#fff;
+    background-color: #333;padding: 10px;color:#fff;
 }
     @media (width<900px){
         .wrapper .flex_item{
-            width:100svw;
-            margin: 0.5rem;
-            padding: 0.5rem;
+            width:100svw;margin: 0.5rem;padding: 0.5rem;
         }
 }
 </style>

@@ -2,7 +2,7 @@
     $country_Capital=[
         ['Italy','Rome'],
         ['Belgium' ,'Brussels'],
-        ['Denmaek','Belgium Brussels'],
+        ['Denmaek','Copenhagen'],
         ['Finland','Helsinki'],
         ['France','Paris'],
         ['Germany','Berlin'],
@@ -22,10 +22,14 @@
             }
         }
     }
-    echo("Country        Capital\n");
+    echo("Country       Capital\n");
     for($x=0;$x<$length;$x++){
         $country=$country_Capital[$x][0];
         $capital=$country_Capital[$x][1];
-    echo("$country        $capital\n");
+    echo("$country");
+    for ($i=0; $i <12- strlen($country); $i++) { 
+       echo " ";
     }
-?> 
+    echo "$capital\n";
+    }
+?>

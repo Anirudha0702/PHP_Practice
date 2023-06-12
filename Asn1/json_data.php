@@ -1,9 +1,6 @@
 <?php
 $info='[
-      {
-        "name": "Math",
-        "img":"https://images.pexels.com/photos/3729557/pexels-photo-3729557.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "description": "Mathematics is the study of numbers, quantity, and space. It includes various branches such as algebra, geometry, calculus, and statistics.",
+      {"name": "Math","img":"https://images.pexels.com/photos/3729557/pexels-photo-3729557.jpeg?auto=compress&cs=tinysrgb&w=600","description": "Mathematics is the study of numbers, quantity, and space. It includes various branches such as algebra, geometry, calculus, and statistics.",
         "teachers": [
           "Mr. Johnson",
           "Mrs. Smith",
